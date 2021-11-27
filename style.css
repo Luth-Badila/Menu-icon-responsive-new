@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* padding: 10px 20px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@media(max-width:991px) {
+    .menu_icon {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background: #222222;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    span {
+        position: relative;
+        display: block;
+        width: 100%;
+        border-radius: 7px;
+        height: 7px;
+        background: rgb(255, 81, 96);
+        transition: all .3s;
+        margin: 8% 0;
+    }
+    .active span:nth-child(1) {
+        animation: ease .7s top forwards;
+    }
+    .not-active span:nth-child(1) {
+        animation: ease .7s top-2 forwards;
+    }
+    .active span:nth-child(2) {
+        animation: ease .7s zoom-out forwards;
+    }
+    .not-active span:nth-child(2) {
+        animation: ease .7s zoom-in forwards;
+    }
+    .active span:nth-child(3) {
+        animation: ease .7s bottom forwards;
+    }
+    .not-active span:nth-child(3) {
+        animation: ease .7s bottom-2 forwards;
+    }
+    @keyframes top {
+        0% {
+            top: 0;
+            transform: rotate(0);
+        }
+        50% {
+            top: 22px;
+            transform: rotate(0);
+        }
+        100% {
+            top: 26px;
+            transform: rotate(135deg);
+        }
+    }
+    @keyframes top-2 {
+        0% {
+            top: 22px;
+            transform: rotate(135deg);
+        }
+        50% {
+            top: 22px;
+            transform: rotate(0deg);
+        }
+        100% {
+            top: 0;
+            transform: rotate(0deg);
+        }
+    }
+    @keyframes bottom {
+        0% {
+            bottom: 0;
+            transform: rotate(0);
+        }
+        50% {
+            bottom: 22px;
+            transform: rotate(0);
+        }
+        100% {
+            bottom: 22px;
+            transform: rotate(45deg);
+        }
+    }
+    @keyframes bottom-2 {
+        0% {
+            bottom: 22px;
+            transform: rotate(45deg);
+        }
+        50% {
+            bottom: 22px;
+            transform: rotate(0);
+        }
+        100% {
+            bottom: 0;
+            transform: rotate(0);
+        }
+    }
+    @keyframes zoom-out {
+        50% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(0);
+        }
+    }
+    @keyframes zoom-in {
+        0% {
+            transform: scale(0);
+        }
+        50% {
+            transform: scale(0);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}
